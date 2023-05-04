@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
 class Api_Helper
 {
   //post api call
-  Future<void> apiCall()
+  Future<List> apiCall()
   async {
     String apiLink = "https://jsonplaceholder.typicode.com/posts";
     List<dynamic> l1 = [];
@@ -22,6 +22,8 @@ class Api_Helper
 
     List<dynamic> jsonPostData = json.map((e) => postModel().fromPost(e)).toList();
     l1 = jsonPostData;
+
+    return jsonPostData;
 
   }
 }
